@@ -3,10 +3,10 @@ class BlogsController < ApplicationController
   end
 
   def show
-    @blog = Blog.new
   end
 
   def new
+    @blog = Blog.new
   end
 
   def create
@@ -25,6 +25,6 @@ class BlogsController < ApplicationController
 
   private
   def blog_params
-    params.permit(:title, :category, :body)
+    params.require(:blog).permit(:title, :category, :body)
   end
 end
